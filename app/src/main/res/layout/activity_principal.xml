@@ -18,14 +18,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="280dp"
             android:background="@drawable/top_fondo">
 
             <ImageView
                 android:id="@+id/iv_usuario"
                 android:layout_width="128dp"
                 android:layout_height="128dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -68,7 +68,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10sp"
+            android:layout_marginStart="30dp"
             app:cardBackgroundColor="@color/boton"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
@@ -76,8 +76,8 @@
 
             <ImageView
                 android:id="@+id/iv_buscador"
-                android:layout_width="108dp"
-                android:layout_height="104dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="top|start"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/buscador" />
@@ -86,7 +86,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="155dp"
+            android:layout_marginStart="150dp"
             app:cardBackgroundColor="@color/boton"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
@@ -94,16 +94,16 @@
 
             <ImageView
                 android:id="@+id/iv_artistas"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="top|center"
                 app:srcCompat="@drawable/artistas" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="109dp"
+            android:layout_width="83dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="290dp"
+            android:layout_marginStart="280dp"
             app:cardBackgroundColor="@color/boton"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
@@ -111,8 +111,8 @@
 
             <ImageView
                 android:id="@+id/iv_salir"
-                android:layout_width="90dp"
-                android:layout_height="104dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="top|end"
                 android:layout_marginEnd="0dp"
                 app:srcCompat="@drawable/salir" />
@@ -133,7 +133,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
+            android:layout_marginStart="80dp"
             app:cardBackgroundColor="@color/boton"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
@@ -141,8 +141,8 @@
 
             <ImageView
                 android:id="@+id/iv_conciertos"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="bottom|start"
                 app:srcCompat="@android:drawable/ic_menu_mapmode" />
         </androidx.cardview.widget.CardView>
@@ -150,7 +150,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="230dp"
+            android:layout_marginStart="240dp"
             app:cardBackgroundColor="@color/boton"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
@@ -158,8 +158,8 @@
 
             <ImageView
                 android:id="@+id/iv_recordatorios"
-                android:layout_width="104dp"
-                android:layout_height="104dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="bottom|center"
                 app:srcCompat="@drawable/reservas" />
         </androidx.cardview.widget.CardView>
@@ -170,11 +170,12 @@
         android:id="@+id/tv_buscador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
         android:text="@string/buscador"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tv_artistas"
         app:layout_constraintHorizontal_bias="0.5"
@@ -185,26 +186,27 @@
         android:id="@+id/tv_artistas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/artistas"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_buscador"
         app:layout_constraintEnd_toStartOf="@+id/tv_salir"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tv_buscador"
-        app:layout_constraintTop_toTopOf="@+id/tv_buscador"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/tv_buscador" />
 
     <TextView
         android:id="@+id/tv_salir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/salir"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_artistas"
         app:layout_constraintEnd_toEndOf="parent"
@@ -216,29 +218,30 @@
         android:id="@+id/tv_reservas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/Recordatorios_entradas"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_mapas"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
 
     <TextView
         android:id="@+id/tv_mapas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="60dp"
         android:text="@string/mapas"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/tv_reservas"
         app:layout_constraintEnd_toStartOf="@+id/tv_reservas"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_reservas" />
 

@@ -13,6 +13,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.bumptech.glide.Glide
 import com.example.proyectoandroid.databinding.ActivityPerfilUsuarioBinding
 import com.example.proyectoandroid.datosRealtimeDatabase.Usuarios
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -67,6 +68,14 @@ class Perfil_Usuario : AppCompatActivity() {
         binding.edtEmailPerfil.isEnabled=false
 
         authUser = auth.currentUser!!
+
+        //Aqui hacemos que si nos hemos autenticado con google no nos deje cambiar la contraseña
+        val googleUser = GoogleSignIn.getLastSignedInAccount(this)
+        val correoUsuarioActual: String? = googleUser?.email
+
+        if (!correoUsuarioActual.isNullOrEmpty()) {
+            binding.edtPassword.isEnabled=false
+        }
 
         cargarImagen()
         setListeners()
