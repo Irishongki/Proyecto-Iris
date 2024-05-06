@@ -4,5 +4,6 @@ import androidx.fragment.app.Fragment
 
 interface OnFragmentActionListener {
     fun mostrarMensaje(msj :String)
-    fun cargarFragment(fragment : Fragment)
+    fun cargarFragmentRegistro(fragment : Fragment)
+    fun cargarFragmentLista(fragment : Fragment)
 }

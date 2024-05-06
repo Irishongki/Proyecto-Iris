@@ -37,7 +37,7 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
         Toast.makeText(this,msj, Toast.LENGTH_SHORT).show()
     }
 
-    override fun cargarFragment(fragment: Fragment) {
+    override fun cargarFragmentRegistro(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
 
         supportFragmentManager.findFragmentById(R.id.fg_registro_recordatorios)?.let { transaction.show(it) }
@@ -45,8 +45,16 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
         transaction.commit()
     }
 
+    override fun cargarFragmentLista(fragment: Fragment) {
+        val transaction = supportFragmentManager.beginTransaction()
+
+        supportFragmentManager.findFragmentById(R.id.fg_registro_recordatorios)?.let { transaction.hide(it) }
+
+        transaction.commit()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater= menuInflater.inflate(R.menu.menu_opciones, menu)
+        menuInflater.inflate(R.menu.menu_opciones, menu)
         return super.onCreateOptionsMenu(menu)
     }
 

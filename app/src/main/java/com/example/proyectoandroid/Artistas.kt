@@ -42,7 +42,7 @@ class Artistas : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater= menuInflater.inflate(R.menu.menu_opciones, menu)
+        menuInflater.inflate(R.menu.menu_opciones, menu)
         return super.onCreateOptionsMenu(menu)
     }
 

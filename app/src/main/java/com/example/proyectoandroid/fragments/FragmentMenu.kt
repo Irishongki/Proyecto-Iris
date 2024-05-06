@@ -30,10 +30,10 @@ class FragmentMenu : Fragment() {
         val imagenDatos : ImageView = view.findViewById(R.id.iv_recordatorio)
         val imagenLista : ImageView = view.findViewById(R.id.iv_lista_recordatorios)
         imagenDatos.setOnClickListener {
-            listener?.cargarFragment(FragmentRegistroRecordatorios())
+            listener?.cargarFragmentRegistro(FragmentRegistroRecordatorios())
         }
         imagenLista.setOnClickListener {
-            listener?.cargarFragment(FragmentListaRecordatorios())
+            listener?.cargarFragmentLista(FragmentListaRecordatorios())
         }
     }
 

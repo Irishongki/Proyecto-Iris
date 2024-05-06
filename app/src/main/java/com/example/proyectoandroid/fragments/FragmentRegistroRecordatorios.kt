@@ -29,11 +29,8 @@ class FragmentRegistroRecordatorios : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         //boton
         val boton : Button = view.findViewById(R.id.btn_reserva)
-
 
         boton.setOnClickListener {
             listener?.mostrarMensaje("Reserva de su entrada realizada")
