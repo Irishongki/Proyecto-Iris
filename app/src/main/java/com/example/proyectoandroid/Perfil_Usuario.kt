@@ -69,13 +69,6 @@ class Perfil_Usuario : AppCompatActivity() {
 
         authUser = auth.currentUser!!
 
-        //Aqui hacemos que si nos hemos autenticado con google no nos deje cambiar la contraseña
-        val googleUser = GoogleSignIn.getLastSignedInAccount(this)
-        val correoUsuarioActual: String? = googleUser?.email
-
-        if (!correoUsuarioActual.isNullOrEmpty()) {
-            binding.edtPassword.isEnabled=false
-        }
 
         cargarImagen()
         setListeners()
