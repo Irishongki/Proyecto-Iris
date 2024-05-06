@@ -16,10 +16,7 @@
     <string name="titulo_recyclerView">Artistas</string>
     <string name="boton_volver">VOLVER</string>
     <string name="mapas">Conciertos</string>
-    <string name="nombre_reserva">NOMBRE</string>
     <string name="hint_nombre">Nombre..</string>
-    <string name="Nº_de_entradas">NUMERO DE ENTRADAS</string>
-    <string name="txt_entradas_format">Entradas: %d entradas</string>
     <string name="tipo">TIPO</string>
     <string name="entradas_vip">VIP</string>
     <string name="entradas_basica">BASICA</string>
@@ -28,6 +25,4 @@
     <string name="merchandising">MERCHANDISING</string>
     <string name="zona">ZONA</string>
     <string name="btn_recordatorio">GUARDAR</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

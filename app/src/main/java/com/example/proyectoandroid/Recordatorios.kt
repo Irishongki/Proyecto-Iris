@@ -37,6 +37,7 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
         Toast.makeText(this,msj, Toast.LENGTH_SHORT).show()
     }
 
+    //Muestra el fragmento en el que registramos los recordatorios de los conciertos
     override fun cargarFragmentRegistro(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
 
@@ -45,6 +46,8 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
         transaction.commit()
     }
 
+    //Muestra la lista de los conciertos que hemos guardado ocultando el
+    // fragment de los registros de los recordatorios de los conciertos
     override fun cargarFragmentLista(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
 

@@ -5,4 +5,10 @@
     android:layout_height="match_parent"
     android:background="@color/fondo_principal"
     android:orientation="vertical"
-    tools:context=".fragments.FragmentListaRecordatorios" />
+    tools:context=".fragments.FragmentListaRecordatorios" >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_conciertos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
