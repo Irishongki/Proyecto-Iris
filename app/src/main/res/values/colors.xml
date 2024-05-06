@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="fondo">#37386E</color>
+    <color name="boton">#7164FF</color>
+    <color name="fondo_principal">#C5CAE9</color>
+    <color name="recordatorios">#B08FEC</color>
+    <color name="fondo_detalle_marcador">#541365C8</color>
+</resources>

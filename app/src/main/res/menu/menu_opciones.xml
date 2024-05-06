@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_sesion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/item_cerrar_sesion" />
+    <item
+        android:id="@+id/item_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="PERFIL" />
+    <item
+        android:id="@+id/item_salir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="@string/item_salir" />
+</menu>

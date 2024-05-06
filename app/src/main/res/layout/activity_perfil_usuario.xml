@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_perfil"
+    tools:context=".Perfil_Usuario">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_perfil"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:backgroundTint="#7544d7"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_perfil"
+            android:layout_width="169dp"
+            android:layout_height="162dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/usuario" />
+    </androidx.cardview.widget.CardView>
+
+    <EditText
+        android:id="@+id/edt_email_perfil"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardview_perfil" />
+
+    <EditText
+        android:id="@+id/edt_NombreUsuario_perfil"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:hint="Tu nombre de Usuario..."
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_email_perfil" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:hint="Tu contraseña.."
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_NombreUsuario_perfil" />
+
+    <Button
+        android:id="@+id/btn_guardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/boton"
+        android:text="GUARDAR"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/btn_baja"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_password" />
+
+    <Button
+        android:id="@+id/btn_baja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="43dp"
+        android:backgroundTint="@color/boton"
+        android:text="Darse de Baja"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_guardar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_guardar"
+        app:layout_constraintTop_toTopOf="@+id/btn_guardar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Iris</string>
+    <string name="hint_usuario">Usuario...</string>
+    <string name="hint_email">Email...</string>
+    <string name="hint_password">Password...</string>
+    <string name="registro">Eres nuevo? Registrate</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_registro">REGISTRO</string>
+    <string name="item_cerrar_sesion">CERRAR SESION</string>
+    <string name="item_salir">SALIR</string>
+    <string name="inicio_sesion">Ya tienes cuenta? Inicia sesion</string>
+    <string name="buscador">Buscador</string>
+    <string name="artistas">Artistas</string>
+    <string name="salir">Salir</string>
+    <string name="Recordatorios_entradas">Recordatorios</string>
+    <string name="titulo_recyclerView">Artistas</string>
+    <string name="boton_volver">VOLVER</string>
+    <string name="mapas">Conciertos</string>
+    <string name="nombre_reserva">NOMBRE</string>
+    <string name="hint_nombre">Nombre..</string>
+    <string name="Nº_de_entradas">NUMERO DE ENTRADAS</string>
+    <string name="txt_entradas_format">Entradas: %d entradas</string>
+    <string name="tipo">TIPO</string>
+    <string name="entradas_vip">VIP</string>
+    <string name="entradas_basica">BASICA</string>
+    <string name="extras">Extras</string>
+    <string name="aperitivos">APERITIVOS</string>
+    <string name="merchandising">MERCHANDISING</string>
+    <string name="zona">ZONA</string>
+    <string name="btn_recordatorio">GUARDAR</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
