@@ -25,4 +25,7 @@
     <string name="merchandising">MERCHANDISING</string>
     <string name="zona">ZONA</string>
     <string name="btn_recordatorio">GUARDAR</string>
+    <string name="darseDeBaja_Confirmacion">¿Estás seguro de que quieres darte de baja?</string>
+    <string name="afirmativo">Si</string>
+    <string name="negativo">No</string>
 </resources>

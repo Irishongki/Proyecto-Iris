@@ -7,4 +7,6 @@
     <color name="fondo_principal">#C5CAE9</color>
     <color name="recordatorios">#B08FEC</color>
     <color name="fondo_detalle_marcador">#541365C8</color>
+    <color name="green">#3CE352</color>
+    <color name="red">#DF1E3B</color>
 </resources>
