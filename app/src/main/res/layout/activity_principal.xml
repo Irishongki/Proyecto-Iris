@@ -56,193 +56,203 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="410dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewBuscador"
+        android:layout_width="126dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/boton"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="8dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardViewArtistas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            app:cardBackgroundColor="@color/boton"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp"
-            app:contentPadding="2dp">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/iv_buscador"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="top|start"
+                android:layout_width="65dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/buscador" />
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
+            <TextView
+                android:id="@+id/tv_buscador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/buscador"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewArtistas"
+        android:layout_width="126dp"
+        android:layout_height="110dp"
+        app:cardBackgroundColor="@color/boton"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewBuscador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardViewBuscador"
+        app:layout_constraintTop_toTopOf="@+id/cardViewBuscador">
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            app:cardBackgroundColor="@color/boton"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp"
-            app:contentPadding="2dp">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/iv_artistas"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="top|center"
-                app:srcCompat="@drawable/artistas" />
-        </androidx.cardview.widget.CardView>
+                android:layout_width="65dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/cantante" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="83dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="280dp"
-            app:cardBackgroundColor="@color/boton"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp"
-            app:contentPadding="2dp">
+            <TextView
+                android:id="@+id/tv_artistas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/artistas"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/iv_salir"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="top|end"
-                android:layout_marginEnd="0dp"
-                app:srcCompat="@drawable/salir" />
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewConciertos"
+        android:layout_width="126dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/boton"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardViewRecordatorios"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_artistas">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewBuscador">
 
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            app:cardBackgroundColor="@color/boton"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp"
-            app:contentPadding="2dp">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/iv_conciertos"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_gravity="bottom|start"
-                app:srcCompat="@android:drawable/ic_menu_mapmode" />
-        </androidx.cardview.widget.CardView>
+                android:layout_width="65dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/mapa_conciertos" />
 
-        <androidx.cardview.widget.CardView
+            <TextView
+                android:id="@+id/tv_mapas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/mapas"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewRecordatorios"
+        android:layout_width="126dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/boton"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewConciertos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardViewConciertos"
+        app:layout_constraintTop_toTopOf="@+id/cardViewConciertos">
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="240dp"
-            app:cardBackgroundColor="@color/boton"
-            app:cardCornerRadius="5dp"
-            app:cardElevation="5dp"
-            app:contentPadding="2dp">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/iv_recordatorios"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="65dp"
+                android:layout_height="53dp"
                 android:layout_gravity="bottom|center"
-                app:srcCompat="@drawable/reservas" />
-        </androidx.cardview.widget.CardView>
+                app:srcCompat="@drawable/concierto" />
 
-    </FrameLayout>
+            <TextView
+                android:id="@+id/tv_reservas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Recordatorios_entradas"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_buscador"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewSalir"
+        android:layout_width="126dp"
+        android:layout_height="110dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="30dp"
-        android:text="@string/buscador"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tv_artistas"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
-
-    <TextView
-        android:id="@+id/tv_artistas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/artistas"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_buscador"
-        app:layout_constraintEnd_toStartOf="@+id/tv_salir"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_buscador"
-        app:layout_constraintTop_toTopOf="@+id/tv_buscador" />
-
-    <TextView
-        android:id="@+id/tv_salir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/salir"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_artistas"
+        app:cardBackgroundColor="@color/boton"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp"
+        app:contentPadding="2dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_artistas"
-        app:layout_constraintTop_toTopOf="@+id/tv_artistas" />
-
-    <TextView
-        android:id="@+id/tv_reservas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/Recordatorios_entradas"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tv_mapas"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
-
-    <TextView
-        android:id="@+id/tv_mapas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:text="@string/mapas"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_reservas"
-        app:layout_constraintEnd_toStartOf="@+id/tv_reservas"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_reservas" />
+        app:layout_constraintTop_toBottomOf="@+id/cardViewConciertos">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_salir"
+                android:layout_width="65dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/salida" />
+
+            <TextView
+                android:id="@+id/tv_salir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/salir"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
