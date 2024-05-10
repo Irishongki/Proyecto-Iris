@@ -40,9 +40,10 @@ class Principal : AppCompatActivity() {
         storageReference= FirebaseStorage.getInstance().reference
         db = FirebaseDatabase.getInstance("https://proyecto-88cf6-default-rtdb.firebaseio.com/")
         ref = db.getReference("usuarios")
-       recogerDatos()
-       setListeners()
+        recogerDatos()
         cargarImagen()
+       setListeners()
+
     }
 
     private fun cargarImagen() {
@@ -128,6 +129,7 @@ class Principal : AppCompatActivity() {
                                 binding.tvEmail.text = correoUsuarioActual
                             }
                         }
+
                     }
 
                     override fun onCancelled(error: DatabaseError) {
@@ -173,11 +175,14 @@ class Principal : AppCompatActivity() {
         super.onResume()
         recogerDatos()
         cargarImagen()
+
     }
 
     override fun onRestart() {
         super.onRestart()
         recogerDatos()
         cargarImagen()
+
     }
+
 }

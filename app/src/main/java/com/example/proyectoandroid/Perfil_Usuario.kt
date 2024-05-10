@@ -53,6 +53,7 @@ class Perfil_Usuario : AppCompatActivity() {
     private var emailFormateado=""
     private val filename = "usuario.png"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPerfilUsuarioBinding.inflate(layoutInflater)
@@ -69,7 +70,6 @@ class Perfil_Usuario : AppCompatActivity() {
 
         authUser = auth.currentUser!!
 
-
         cargarImagen()
         setListeners()
     }
@@ -83,6 +83,16 @@ class Perfil_Usuario : AppCompatActivity() {
         binding.btnGuardar.setOnClickListener {
             if (!errorEnCogerDatos()) {
                 guardarPerfil()
+                // Una vez que se haya guardado el perfil, abrimos el Activity principal nuevamente
+                val intent = Intent(this, Principal::class.java)
+                /*Dato importante:
+                -FLAG_ACTIVITY_CLEAR_TOP se usa para que el Activity principal se limpie
+                 de la pila de actividades y se vuelva a iniciar desde cero.
+                -FLAG_ACTIVITY_NEW_TASK se usa para iniciar el Activity principal como una nueva tarea
+                si aún no está en la pila de tareas.
+                 */
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 finish()
             }
         }
@@ -91,6 +101,9 @@ class Perfil_Usuario : AppCompatActivity() {
         }
     }
 
+    private fun mostrarDialogoDarseDeBaja(){
+      
+    }
     private fun borrarPerfil() {
     // Eliminar los datos del usuario en Realtime Database
         ref.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(object : ValueEventListener {
@@ -241,4 +254,5 @@ class Perfil_Usuario : AppCompatActivity() {
         auth.signOut()
         startActivity(Intent(this, LoginActivity::class.java))
     }
+
 }
