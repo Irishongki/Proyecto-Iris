@@ -1,6 +1,7 @@
 package com.example.proyectoandroid.fragments
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,13 +11,15 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import com.example.proyectoandroid.R
+import java.text.SimpleDateFormat
 import java.time.Year
 import java.util.Calendar
+import java.util.Locale
 
 
 class FragmentRegistroRecordatorios : Fragment() {
     var listener : OnFragmentActionListener?= null
-    private lateinit var fechaSeleccionada: EditText
+    private lateinit var fechaHoraSeleccionada: EditText
     val seleccionarCalendario = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,24 +45,41 @@ class FragmentRegistroRecordatorios : Fragment() {
             listener?.mostrarMensaje("Reserva de su entrada realizada")
 
         }
-        fechaSeleccionada = view.findViewById(R.id.fecha_concierto)
-        fechaSeleccionada.setOnClickListener { mostrarDatePicker() }
+        fechaHoraSeleccionada = view.findViewById(R.id.fecha_hora_concierto)
+        fechaHoraSeleccionada.setOnClickListener { mostrarDatePicker() }
     }
 
     private fun mostrarDatePicker() {
         val year = seleccionarCalendario.get(Calendar.YEAR)
         val month = seleccionarCalendario.get(Calendar.MONTH)
         val day = seleccionarCalendario.get(Calendar.DAY_OF_MONTH)
+        val hour = seleccionarCalendario.get(Calendar.HOUR_OF_DAY)
+        val minute = seleccionarCalendario.get(Calendar.MINUTE)
 
-        val listener = DatePickerDialog.OnDateSetListener { _, y, m, d ->
+        val dateListener = DatePickerDialog.OnDateSetListener { _, y, m, d ->
             seleccionarCalendario.set(y, m, d)
-            fechaSeleccionada.setText("$y-$m-$d")
+            TimePickerDialog(
+                requireContext(),
+                { _, h, min ->
+                    seleccionarCalendario.set(Calendar.HOUR_OF_DAY, h)
+                    seleccionarCalendario.set(Calendar.MINUTE, min)
+                    actualizarFechaHoraSeleccionada()
+                },
+                hour,
+                minute,
+                true
+            ).show()
         }
 
-        // Creamos y mostramos el DatePickerDialog
-        val datePickerDialog = DatePickerDialog(requireContext(), listener, year, month, day)
+        // Crear y mostrar el DatePickerDialog
+        val datePickerDialog = DatePickerDialog(requireContext(), dateListener, year, month, day)
         datePickerDialog.show()
 
+    }
+    private fun actualizarFechaHoraSeleccionada() {
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault())
+        val fechaHoraFormateada = dateFormat.format(seleccionarCalendario.time)
+        fechaHoraSeleccionada.setText(fechaHoraFormateada)
     }
 
     override fun onAttach(context: Context) {
