@@ -3,27 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="40dp"
     android:layout_gravity="bottom"
     android:background="@color/fondo"
     tools:context=".fragments.FragmentMenu">
 
     <ImageView
         android:id="@+id/iv_recordatorio"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/iv_lista_recordatorios"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
+        app:srcCompat="@drawable/editar" />
 
     <ImageView
         android:id="@+id/iv_lista_recordatorios"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@id/iv_recordatorio"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_agenda" />
+        app:srcCompat="@drawable/calendario" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,7 @@ import com.example.proyectoandroid.datosRealtimeDatabase.Usuarios
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -72,6 +73,13 @@ class Perfil_Usuario : AppCompatActivity() {
 
         cargarImagen()
         setListeners()
+
+        // Verificamos si el usuario ha iniciado sesión con Google y deshabilitamos que puedan cambiar el usuario y contraseña
+        if (auth.currentUser?.providerData?.any { it.providerId == GoogleAuthProvider.PROVIDER_ID } == true) {
+            // El usuario ha iniciado sesión con Google, deshabilitamos los EditText
+            binding.edtNombreUsuarioPerfil.isEnabled = false
+            binding.edtPassword.isEnabled = false
+        }
     }
 
     private fun setListeners() {
@@ -81,18 +89,25 @@ class Perfil_Usuario : AppCompatActivity() {
         }
         // Listener para guardar perfil
         binding.btnGuardar.setOnClickListener {
-            if (!errorEnCogerDatos()) {
-                guardarPerfil()
-                // Una vez que se haya guardado el perfil, abrimos el Activity principal nuevamente
-                val intent = Intent(this, Principal::class.java)
-                /*Dato importante:
+            usuario= binding.edtNombreUsuarioPerfil.text.toString().trim()
+            password= binding.edtPassword.text.toString().trim()
+            if(usuario.isNotEmpty() || password.isNotEmpty()) {
+                if (!errorEnCogerDatos()) {
+                    actualizarDatosUsuario()
+                    // Una vez que se haya guardado el perfil, abrimos el Activity principal nuevamente
+                    val intent = Intent(this, Principal::class.java)
+                    /*Dato importante:
                 -FLAG_ACTIVITY_CLEAR_TOP se usa para que el Activity principal se limpie
                  de la pila de actividades y se vuelva a iniciar desde cero.
                 -FLAG_ACTIVITY_NEW_TASK se usa para iniciar el Activity principal como una nueva tarea
                 si aún no está en la pila de tareas.
                  */
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intent)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
+                }
+            }else{
+                guardarPerfil()
                 finish()
             }
         }
@@ -147,12 +162,9 @@ class Perfil_Usuario : AppCompatActivity() {
                     Toast.makeText(this, "No se pudo guardar la imagen", Toast.LENGTH_SHORT).show()
                 }
                 .addOnSuccessListener {
-                    // Después de guardar la imagen, actualizar los datos del perfil en la base de datos
-                    actualizarDatosUsuario()
+                    Toast.makeText(this, "Se ha guardado la imagen correctamente", Toast.LENGTH_SHORT).show()
                 }
         } else {
-            // Si no se seleccionó una imagen, actualizar los datos del perfil en la base de datos directamente
-            actualizarDatosUsuario()
             Toast.makeText(this, "No se seleccionó ninguna imagen", Toast.LENGTH_SHORT).show()
         }
     }
