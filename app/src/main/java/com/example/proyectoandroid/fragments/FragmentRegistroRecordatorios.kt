@@ -1,5 +1,6 @@
 package com.example.proyectoandroid.fragments
 
+import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import com.example.proyectoandroid.R
+import java.time.Year
+import java.util.Calendar
 
 
 class FragmentRegistroRecordatorios : Fragment() {
     var listener : OnFragmentActionListener?= null
+    private lateinit var fechaSeleccionada: EditText
+    val seleccionarCalendario = Calendar.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +42,24 @@ class FragmentRegistroRecordatorios : Fragment() {
             listener?.mostrarMensaje("Reserva de su entrada realizada")
 
         }
+        fechaSeleccionada = view.findViewById(R.id.fecha_concierto)
+        fechaSeleccionada.setOnClickListener { mostrarDatePicker() }
+    }
+
+    private fun mostrarDatePicker() {
+        val year = seleccionarCalendario.get(Calendar.YEAR)
+        val month = seleccionarCalendario.get(Calendar.MONTH)
+        val day = seleccionarCalendario.get(Calendar.DAY_OF_MONTH)
+
+        val listener = DatePickerDialog.OnDateSetListener { _, y, m, d ->
+            seleccionarCalendario.set(y, m, d)
+            fechaSeleccionada.setText("$y-$m-$d")
+        }
+
+        // Creamos y mostramos el DatePickerDialog
+        val datePickerDialog = DatePickerDialog(requireContext(), listener, year, month, day)
+        datePickerDialog.show()
+
     }
 
     override fun onAttach(context: Context) {
@@ -47,4 +71,5 @@ class FragmentRegistroRecordatorios : Fragment() {
         super.onDetach()
         listener=null
     }
+
 }

@@ -1,12 +1,14 @@
 package com.example.proyectoandroid.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import com.example.proyectoandroid.Principal
 import com.example.proyectoandroid.R
 
 
@@ -29,11 +31,16 @@ class FragmentMenu : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val imagenDatos : ImageView = view.findViewById(R.id.iv_recordatorio)
         val imagenLista : ImageView = view.findViewById(R.id.iv_lista_recordatorios)
+        val imagenPrincipal : ImageView = view.findViewById(R.id.iv_Principal)
         imagenDatos.setOnClickListener {
             listener?.cargarFragmentRegistro(FragmentRegistroRecordatorios())
         }
         imagenLista.setOnClickListener {
             listener?.cargarFragmentLista(FragmentListaRecordatorios())
+        }
+        imagenPrincipal.setOnClickListener {
+            val intent = Intent(requireContext(), Principal::class.java)
+            listener?.irActivityPrincipal(intent)
         }
     }
 

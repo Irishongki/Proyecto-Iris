@@ -119,7 +119,7 @@ class Mapa : AppCompatActivity() , OnMapReadyCallback, GoogleMap.OnMyLocationBut
 
        mapa.addMarker(MarkerOptions()
             .position(evento.posicion)
-            .title(evento.nombre)
+            .title(evento.nombre+ "\n")
            .snippet(evento.fechaHora + "\n" +evento.direccion + "\n" +
                    evento.ciudad + "\n" +evento.nombreArtista + "\n" +
                    "Precio de las entradas " + evento.precio+ "€")
