@@ -22,6 +22,7 @@ class FragmentListaRecordatorios : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var recordatoriosAdapter: RecordatoriosAdapter
     var listener : OnFragmentActionListener?= null
+    private var lista = mutableListOf<Conciertos>()
         override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -34,13 +35,31 @@ class FragmentListaRecordatorios : Fragment() {
 
             recyclerView = view.findViewById(R.id.recycler_conciertos)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recordatoriosAdapter = RecordatoriosAdapter(emptyList())
-            recyclerView.adapter = recordatoriosAdapter
+            recordatoriosAdapter = RecordatoriosAdapter(lista) { concierto ->
+                // Aquí implementas la lógica para eliminar el concierto
+                eliminarConcierto(concierto)
+            }
+                    recyclerView.adapter = recordatoriosAdapter
 
             obtenerDatosRecordatorios()
         }
 
-        private fun obtenerDatosRecordatorios() {
+    private fun eliminarConcierto(concierto: String?) {
+        if (concierto != null) {
+            val databaseReference = FirebaseDatabase.getInstance().getReference("conciertos").child(concierto)
+            databaseReference.removeValue()
+                .addOnSuccessListener {
+                    listener?.mostrarMensaje("Concierto eliminado")
+                }
+                .addOnFailureListener { exception ->
+                    listener?.mostrarMensaje("Error al eliminar el concierto ")
+                }
+        } else {
+            listener?.mostrarMensaje( "ID de concierto nulo")
+        }
+    }
+
+    private fun obtenerDatosRecordatorios() {
             val databaseReference = FirebaseDatabase.getInstance().getReference("conciertos")
             databaseReference.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {

@@ -1,5 +1,7 @@
 package com.example.proyectoandroid.datosRealtimeDatabase
 
+import java.io.Serializable
+
 data class Conciertos(
     val id: String? = null,
     val titulo: String? = null ,

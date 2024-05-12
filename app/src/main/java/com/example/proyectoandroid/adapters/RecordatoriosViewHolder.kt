@@ -8,7 +8,9 @@ import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
 class RecordatoriosViewHolder (v: View) : RecyclerView.ViewHolder(v){
     private val binding = LayoutRecordatorioConciertoBinding.bind(v)
     fun render(
-        concierto: Conciertos
+        concierto: Conciertos,
+        eliminarConcierto: (String?) -> Unit
+
     ){
         binding.tvNombreConcierto.text = concierto.titulo
         binding.tvFechaHoraConcierto.text= concierto.fechaHora
@@ -16,6 +18,10 @@ class RecordatoriosViewHolder (v: View) : RecyclerView.ViewHolder(v){
         binding.tvCiudadConcierto.text = concierto.ciudad
         binding.tvArtista.text = concierto.artista
         binding.tvPrecioConcierto.text = concierto.precio
+        binding.ivBorrarRecordatorio.setOnClickListener {
+            eliminarConcierto(concierto.id)
+        }
+
 
     }
 }

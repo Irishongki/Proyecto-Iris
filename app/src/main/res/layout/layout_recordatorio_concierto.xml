@@ -111,7 +111,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_borrar_recordatorio"
             app:layout_constraintEnd_toStartOf="@+id/iv_borrar_recordatorio"
             app:layout_constraintTop_toTopOf="@+id/iv_borrar_recordatorio"
-            app:srcCompat="@android:drawable/ic_menu_edit" />
+            app:srcCompat="@android:drawable/ic_menu_edit"
+            android:onClick="editarConcierto"/>
 
         <ImageView
             android:id="@+id/iv_borrar_recordatorio"

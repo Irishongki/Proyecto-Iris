@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
 
-class RecordatoriosAdapter(var lista: List<Conciertos>) :
+class RecordatoriosAdapter(var lista: List<Conciertos>,   val eliminarConcierto: (String?) -> Unit
+                          ) :
     RecyclerView.Adapter<RecordatoriosViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecordatoriosViewHolder {
@@ -20,6 +21,6 @@ class RecordatoriosAdapter(var lista: List<Conciertos>) :
     }
 
     override fun onBindViewHolder(holder: RecordatoriosViewHolder, position: Int) {
-        holder.render(lista[position])
+        holder.render(lista[position], eliminarConcierto)
     }
 }
