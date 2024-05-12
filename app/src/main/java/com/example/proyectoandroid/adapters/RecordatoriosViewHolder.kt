@@ -9,8 +9,8 @@ class RecordatoriosViewHolder (v: View) : RecyclerView.ViewHolder(v){
     private val binding = LayoutRecordatorioConciertoBinding.bind(v)
     fun render(
         concierto: Conciertos,
-        eliminarConcierto: (String?) -> Unit
-
+        eliminarConcierto: (String?) -> Unit,
+        editarConcierto: (String?) -> Unit
     ){
         binding.tvNombreConcierto.text = concierto.titulo
         binding.tvFechaHoraConcierto.text= concierto.fechaHora
@@ -21,7 +21,9 @@ class RecordatoriosViewHolder (v: View) : RecyclerView.ViewHolder(v){
         binding.ivBorrarRecordatorio.setOnClickListener {
             eliminarConcierto(concierto.id)
         }
-
+        binding.ivActualizarRecordatorio.setOnClickListener {
+            editarConcierto(concierto.id)
+        }
 
     }
 }

@@ -17,6 +17,9 @@
         android:theme="@style/Theme.ProyectoAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".EditarRecordatorios"
+            android:exported="false" />
+        <activity
             android:name=".Perfil_Usuario"
             android:exported="false"
             android:screenOrientation="portrait"

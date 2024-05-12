@@ -1,6 +1,7 @@
 package com.example.proyectoandroid.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyectoandroid.EditarRecordatorios
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.adapters.RecordatoriosAdapter
 import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
@@ -35,14 +37,18 @@ class FragmentListaRecordatorios : Fragment() {
 
             recyclerView = view.findViewById(R.id.recycler_conciertos)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recordatoriosAdapter = RecordatoriosAdapter(lista) { concierto ->
-                // Aquí implementas la lógica para eliminar el concierto
-                eliminarConcierto(concierto)
-            }
-                    recyclerView.adapter = recordatoriosAdapter
+            recordatoriosAdapter = RecordatoriosAdapter(lista, ::eliminarConcierto, ::editarConcierto)
+            recyclerView.adapter = recordatoriosAdapter
 
             obtenerDatosRecordatorios()
         }
+
+    private fun editarConcierto(id: String?){
+        val intent = Intent(requireContext(), EditarRecordatorios::class.java)
+        intent.putExtra("concierto_id", id)
+        startActivity(intent)
+    }
+
 
     private fun eliminarConcierto(concierto: String?) {
         if (concierto != null) {

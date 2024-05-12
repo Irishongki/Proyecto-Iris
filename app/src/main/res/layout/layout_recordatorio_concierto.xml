@@ -35,6 +35,7 @@
             android:text="Nombre"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_icono_conciertos"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,26 +68,25 @@
             android:id="@+id/tv_Artista"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="96dp"
             android:text="Artista"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_direccion_concierto" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_ciudad_concierto" />
 
         <TextView
             android:id="@+id/tv_ciudad_concierto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Ciudad"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_Artista"
-            app:layout_constraintEnd_toStartOf="@+id/tv_Artista"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_icono_conciertos"
-            app:layout_constraintTop_toTopOf="@+id/tv_Artista" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_direccion_concierto" />
 
         <TextView
             android:id="@+id/tv_precio_concierto"
