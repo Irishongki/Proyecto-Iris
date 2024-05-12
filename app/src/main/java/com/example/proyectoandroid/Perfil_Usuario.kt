@@ -93,6 +93,7 @@ class Perfil_Usuario : AppCompatActivity() {
             password= binding.edtPassword.text.toString().trim()
             if(usuario.isNotEmpty() || password.isNotEmpty()) {
                 if (!errorEnCogerDatos()) {
+                    guardarPerfil()
                     actualizarDatosUsuario()
                     // Una vez que se haya guardado el perfil, abrimos el Activity principal nuevamente
                     val intent = Intent(this, Principal::class.java)
@@ -108,6 +109,9 @@ class Perfil_Usuario : AppCompatActivity() {
                 }
             }else{
                 guardarPerfil()
+                val intent = Intent(this, Principal::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                startActivity(intent)
                 finish()
             }
         }

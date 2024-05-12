@@ -10,7 +10,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.example.proyectoandroid.R
+import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
+import com.example.proyectoandroid.datosRealtimeDatabase.Usuarios
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import java.text.SimpleDateFormat
 import java.time.Year
 import java.util.Calendar
@@ -20,7 +28,13 @@ import java.util.Locale
 class FragmentRegistroRecordatorios : Fragment() {
     var listener : OnFragmentActionListener?= null
     private lateinit var fechaHoraSeleccionada: EditText
+    private lateinit var nombreConcierto: EditText
+    private lateinit var direccionConcierto: EditText
+    private lateinit var ciudadConcierto: EditText
+    private lateinit var artistaConcierto: EditText
+    private lateinit var precioConcierto: EditText
     val seleccionarCalendario = Calendar.getInstance()
+    private lateinit var miDB_Reference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -32,22 +46,66 @@ class FragmentRegistroRecordatorios : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_registro_recordatorios, container, false)
-        
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Inicializar EditTexts
+        fechaHoraSeleccionada = view.findViewById(R.id.fecha_hora_concierto)
+        nombreConcierto = view.findViewById(R.id.nombre_concierto)
+        direccionConcierto = view.findViewById(R.id.direccion_concierto)
+        ciudadConcierto = view.findViewById(R.id.ciudad_concierto)
+        artistaConcierto = view.findViewById(R.id.artista_concierto)
+        precioConcierto = view.findViewById(R.id.precio_concierto)
+
+        // Inicializar referencia a la base de datos
+        miDB_Reference = FirebaseDatabase.getInstance().reference.child("conciertos")
+
         //boton
         val boton : Button = view.findViewById(R.id.btn_reserva)
 
         boton.setOnClickListener {
-            listener?.mostrarMensaje("Reserva de su entrada realizada")
-
+            guardarConciertoDB()
         }
-        fechaHoraSeleccionada = view.findViewById(R.id.fecha_hora_concierto)
         fechaHoraSeleccionada.setOnClickListener { mostrarDatePicker() }
     }
+
+    private fun guardarConciertoDB() {
+        // Obtenemos los valores de los EditText
+        val nombre = nombreConcierto.text.toString().trim()
+        val fechaHora = fechaHoraSeleccionada.text.toString().trim()
+        val direccion = direccionConcierto.text.toString().trim()
+        val ciudad = ciudadConcierto.text.toString().trim()
+        val artista = artistaConcierto.text.toString().trim()
+        val precio = precioConcierto.text.toString().trim()
+
+    // Verificamos que los campos no estén vacíos
+        if (nombre.isNotEmpty() && fechaHora.isNotEmpty() && direccion.isNotEmpty()
+            && ciudad.isNotEmpty() && artista.isNotEmpty() && precio.isNotEmpty()) {
+
+            // Generamos un ID único para el concierto
+            val conciertoId = miDB_Reference.push().key
+
+            val concierto = Conciertos(conciertoId, nombre, fechaHora, direccion, ciudad, artista, precio)
+
+            // Guardamos el concierto en la base de datos
+            conciertoId?.let {
+                miDB_Reference.child(it).setValue(concierto)
+                    .addOnSuccessListener {
+                        listener?.mostrarMensaje("Recordatorio del concierto guardado correctamente")
+                    }
+                    .addOnFailureListener {
+                        listener?.mostrarMensaje("Error al guardar el recordatorio")
+                    }
+            }
+        }else{
+            listener?.mostrarMensaje("Por favor, introduzca todos los campos")
+        }
+
+    }
+
 
     private fun mostrarDatePicker() {
         val year = seleccionarCalendario.get(Calendar.YEAR)
@@ -71,7 +129,7 @@ class FragmentRegistroRecordatorios : Fragment() {
             ).show()
         }
 
-        // Crear y mostrar el DatePickerDialog
+        // Creamos y mostramos el DatePickerDialog
         val datePickerDialog = DatePickerDialog(requireContext(), dateListener, year, month, day)
         datePickerDialog.show()
 

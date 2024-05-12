@@ -6,23 +6,60 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.R
+import com.example.proyectoandroid.adapters.RecordatoriosAdapter
+import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 
 class FragmentListaRecordatorios : Fragment() {
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var recordatoriosAdapter: RecordatoriosAdapter
     var listener : OnFragmentActionListener?= null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        override fun onCreateView(
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
+            return inflater.inflate(R.layout.fragment_lista_recordatorios, container, false)
+        }
 
-    }
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_recordatorios, container, false)
-    }
+            recyclerView = view.findViewById(R.id.recycler_conciertos)
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recordatoriosAdapter = RecordatoriosAdapter(emptyList())
+            recyclerView.adapter = recordatoriosAdapter
+
+            obtenerDatosRecordatorios()
+        }
+
+        private fun obtenerDatosRecordatorios() {
+            val databaseReference = FirebaseDatabase.getInstance().getReference("conciertos")
+            databaseReference.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val conciertosList = mutableListOf<Conciertos>()
+                    for (dataSnapshot in snapshot.children) {
+                        val concierto = dataSnapshot.getValue(Conciertos::class.java)
+                        concierto?.let { conciertosList.add(it) }
+                    }
+                    recordatoriosAdapter.lista = conciertosList
+                    recordatoriosAdapter.notifyDataSetChanged()
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Manejar error de lectura de la base de datos
+                }
+            })
+        }
+
+
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

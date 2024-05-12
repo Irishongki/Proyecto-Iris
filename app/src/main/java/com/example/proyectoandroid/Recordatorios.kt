@@ -7,7 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.proyectoandroid.fragments.FragmentListaRecordatorios
 import com.example.proyectoandroid.fragments.FragmentMenu
+import com.example.proyectoandroid.fragments.FragmentRegistroRecordatorios
 import com.example.proyectoandroid.fragments.OnFragmentActionListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -27,6 +29,8 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
 
         transaction.setReorderingAllowed(true)
         transaction.add(R.id.fg_menu, FragmentMenu())
+        transaction.add(R.id.fg_listaRecordatorios, FragmentListaRecordatorios())
+
 
         supportFragmentManager.findFragmentById(R.id.fg_listaRecordatorios)?.let { transaction.show(it) }
         supportFragmentManager.findFragmentById(R.id.fg_registro_recordatorios)?.let { transaction.hide(it) }
@@ -41,6 +45,8 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
     override fun cargarFragmentRegistro(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
 
+
+        supportFragmentManager.findFragmentById(R.id.fg_listaRecordatorios)?.let { transaction.hide(it) }
         supportFragmentManager.findFragmentById(R.id.fg_registro_recordatorios)?.let { transaction.show(it) }
 
         transaction.commit()
@@ -51,8 +57,9 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
     override fun cargarFragmentLista(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
 
-        supportFragmentManager.findFragmentById(R.id.fg_registro_recordatorios)?.let { transaction.hide(it) }
 
+        supportFragmentManager.findFragmentById(R.id.fg_registro_recordatorios)?.let { transaction.hide(it) }
+        supportFragmentManager.findFragmentById(R.id.fg_listaRecordatorios)?.let { transaction.show(it) }
         transaction.commit()
     }
 
