@@ -74,9 +74,8 @@ class Perfil_Usuario : AppCompatActivity() {
         cargarImagen()
         setListeners()
 
-        // Verificamos si el usuario ha iniciado sesión con Google y deshabilitamos que puedan cambiar el usuario y contraseña
+        // Verificamos si el usuario ha iniciado sesión con Google y deshabilitamos que se pueda cambiar el usuario y contraseña
         if (auth.currentUser?.providerData?.any { it.providerId == GoogleAuthProvider.PROVIDER_ID } == true) {
-            // El usuario ha iniciado sesión con Google, deshabilitamos los EditText
             binding.edtNombreUsuarioPerfil.isEnabled = false
             binding.edtPassword.isEnabled = false
         }
@@ -105,14 +104,14 @@ class Perfil_Usuario : AppCompatActivity() {
                  */
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
-                    finish()
+
                 }
             }else{
                 guardarPerfil()
                 val intent = Intent(this, Principal::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
-                finish()
+
             }
         }
         binding.btnBaja.setOnClickListener {
