@@ -1,12 +1,17 @@
 package com.example.proyectoandroid
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Window
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -115,13 +120,30 @@ class Perfil_Usuario : AppCompatActivity() {
             }
         }
         binding.btnBaja.setOnClickListener {
-            borrarPerfil()
+            mostrarMensajeDarseDeBaja()
         }
     }
 
-    private fun mostrarDialogoDarseDeBaja(){
-      
+    private fun mostrarMensajeDarseDeBaja() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialogo_darse_baja)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnAfirmativo : Button = dialog.findViewById(R.id.btn_afirmativo)
+        val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
+
+        btnAfirmativo.setOnClickListener {
+            borrarPerfil()
+        }
+
+        btnNegativo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
+
     private fun borrarPerfil() {
     // Eliminar los datos del usuario en Realtime Database
         ref.orderByChild("email").equalTo(email).addListenerForSingleValueEvent(object : ValueEventListener {
@@ -152,7 +174,7 @@ class Perfil_Usuario : AppCompatActivity() {
                     Toast.makeText(this, "Error al eliminar el usuario", Toast.LENGTH_SHORT).show()
                 }
             }
-        finishAffinity()
+        startActivity(Intent(this,Registro::class.java))
     }
 
     private fun guardarPerfil() {
