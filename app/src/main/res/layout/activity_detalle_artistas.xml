@@ -32,11 +32,11 @@
         app:srcCompat="@drawable/artista1" />
 
     <TextView
-        android:id="@+id/tv_canciones"
+        android:id="@+id/titulo_informacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Canciones Principales"
+        android:text="Información"
         android:textColor="#0B0A0A"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -44,27 +44,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_artista_detalle" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_canciones"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="5dp"
+    <TextView
+        android:id="@+id/tv_informacion"
+        android:layout_width="wrap_content"
+        android:layout_height="191dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_canciones">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <Button
-        android:id="@+id/bt_volver"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/boton"
-        android:text="@string/boton_volver"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recycler_canciones" />
+        app:layout_constraintTop_toBottomOf="@+id/titulo_informacion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

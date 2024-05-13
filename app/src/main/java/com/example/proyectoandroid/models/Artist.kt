@@ -5,7 +5,8 @@ import java.io.Serializable
 
 data class Artist(
         val nombre:String,
-        val imagen:Int
+        val imagen:Int,
+        val descripcion:String
     ): Serializable
 
 

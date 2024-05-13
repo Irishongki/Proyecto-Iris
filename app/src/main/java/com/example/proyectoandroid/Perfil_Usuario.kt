@@ -99,23 +99,12 @@ class Perfil_Usuario : AppCompatActivity() {
                 if (!errorEnCogerDatos()) {
                     guardarPerfil()
                     actualizarDatosUsuario()
-                    // Una vez que se haya guardado el perfil, abrimos el Activity principal nuevamente
-                    val intent = Intent(this, Principal::class.java)
-                    /*Dato importante:
-                -FLAG_ACTIVITY_CLEAR_TOP se usa para que el Activity principal se limpie
-                 de la pila de actividades y se vuelva a iniciar desde cero.
-                -FLAG_ACTIVITY_NEW_TASK se usa para iniciar el Activity principal como una nueva tarea
-                si aún no está en la pila de tareas.
-                 */
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                    startActivity(intent)
+                    finish()
 
                 }
             }else{
                 guardarPerfil()
-                val intent = Intent(this, Principal::class.java)
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                startActivity(intent)
+                finish()
 
             }
         }
@@ -271,7 +260,7 @@ class Perfil_Usuario : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_sesion ->{
-                cerrarSesion()
+                mostrarMensajeCerrarSesion()
             }
             R.id.item_perfil ->{
                 irActivityPerfil()
@@ -281,6 +270,26 @@ class Perfil_Usuario : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun mostrarMensajeCerrarSesion() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialogo_cerrar_sesion)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnAfirmativo : Button = dialog.findViewById(R.id.btn_afirmativo)
+        val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
+
+        btnAfirmativo.setOnClickListener {
+            cerrarSesion()
+        }
+
+        btnNegativo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 
     private fun irActivityPerfil() {

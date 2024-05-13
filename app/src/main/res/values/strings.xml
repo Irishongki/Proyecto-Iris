@@ -11,7 +11,7 @@
     <string name="inicio_sesion">Ya tienes cuenta? Inicia sesion</string>
     <string name="buscador">Buscador</string>
     <string name="artistas">Artistas</string>
-    <string name="salir">Salir</string>
+    <string name="cerrarSesion">Cerrar Sesión</string>
     <string name="Recordatorios_entradas">Recordatorios</string>
     <string name="titulo_recyclerView">Artistas</string>
     <string name="boton_volver">VOLVER</string>
@@ -27,6 +27,7 @@
     <string name="btn_recordatorio">GUARDAR</string>
     <string name="btn_editar_recordatorio">EDITAR</string>
     <string name="darseDeBaja_Confirmacion">¿Estás seguro de que quieres darte de baja?</string>
+    <string name="cerrarSesion_Confirmacion">¿Estás seguro de que quieres cerrar sesión?</string>
     <string name="afirmativo">Si</string>
     <string name="negativo">No</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>

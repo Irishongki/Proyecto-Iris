@@ -67,7 +67,9 @@
         app:contentPadding="5dp"
         app:layout_constraintEnd_toStartOf="@+id/cardViewArtistas"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        android:clickable="true"
+       >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -108,7 +110,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardViewBuscador"
         app:layout_constraintTop_toTopOf="@+id/cardViewBuscador"
-        app:layout_constraintVertical_bias="0.0">
+        android:clickable="true"
+       >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -147,7 +150,9 @@
         app:contentPadding="5dp"
         app:layout_constraintEnd_toStartOf="@+id/cardViewRecordatorios"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewBuscador">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewBuscador"
+        android:clickable="true"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -187,7 +192,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/cardViewConciertos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardViewConciertos"
-        app:layout_constraintTop_toTopOf="@+id/cardViewConciertos">
+        app:layout_constraintTop_toTopOf="@+id/cardViewConciertos"
+        android:clickable="true"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -217,7 +224,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewSalir"
+        android:id="@+id/cardViewCerrarSesion"
         android:layout_width="126dp"
         android:layout_height="110dp"
         android:layout_marginTop="20dp"
@@ -227,7 +234,9 @@
         app:contentPadding="5dp"
         app:layout_constraintEnd_toStartOf="@+id/cardViewRecordatorios"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewConciertos">
+        app:layout_constraintTop_toBottomOf="@+id/cardViewConciertos"
+        android:clickable="true"
+        >
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -236,18 +245,18 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/iv_salir"
+                android:id="@+id/iv_cerrarSesion"
                 android:layout_width="65dp"
                 android:layout_height="53dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/salida" />
+                app:srcCompat="@drawable/cerrado" />
 
             <TextView
-                android:id="@+id/tv_salir"
-                android:layout_width="match_parent"
+                android:id="@+id/tv_cerrarSesion"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/salir"
+                android:text="@string/cerrarSesion"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />

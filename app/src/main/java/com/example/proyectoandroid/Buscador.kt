@@ -1,15 +1,20 @@
 package com.example.proyectoandroid
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Window
 import android.webkit.WebChromeClient
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.Button
 import android.widget.SearchView
 import com.example.proyectoandroid.databinding.ActivityBuscadorBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -95,7 +100,7 @@ class Buscador : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_sesion ->{
-                cerrarSesion()
+                mostrarMensajeCerrarSesion()
             }
             R.id.item_perfil ->{
                 irActivityPerfil()
@@ -105,6 +110,26 @@ class Buscador : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun mostrarMensajeCerrarSesion() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialogo_cerrar_sesion)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnAfirmativo : Button = dialog.findViewById(R.id.btn_afirmativo)
+        val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
+
+        btnAfirmativo.setOnClickListener {
+            cerrarSesion()
+        }
+
+        btnNegativo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 
     private fun cerrarSesion() {

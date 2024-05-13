@@ -1,10 +1,15 @@
 package com.example.proyectoandroid
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.Window
+import android.widget.Button
 import com.example.proyectoandroid.databinding.ActivityDetalleArtistasBinding
 import com.example.proyectoandroid.models.Artist
 import com.google.firebase.auth.FirebaseAuth
@@ -21,14 +26,8 @@ class DetalleArtistasActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
         cogeryPintarDatos()
-        setListeners()
     }
 
-    private fun setListeners() {
-        binding.btVolver.setOnClickListener {
-            finish()
-        }
-    }
 
     private fun cogeryPintarDatos() {
         val datos = intent.extras
@@ -36,6 +35,7 @@ class DetalleArtistasActivity : AppCompatActivity() {
 
         binding.tvTitulo.text= artista.nombre
         binding.ivArtistaDetalle.setImageResource(artista.imagen)
+        binding.tvInformacion.text = artista.descripcion
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -46,7 +46,7 @@ class DetalleArtistasActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.item_sesion ->{
-                cerrarSesion()
+                mostrarMensajeCerrarSesion()
             }
             R.id.item_perfil ->{
                 irActivityPerfil()
@@ -56,6 +56,26 @@ class DetalleArtistasActivity : AppCompatActivity() {
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun mostrarMensajeCerrarSesion() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialogo_cerrar_sesion)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnAfirmativo : Button = dialog.findViewById(R.id.btn_afirmativo)
+        val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
+
+        btnAfirmativo.setOnClickListener {
+            cerrarSesion()
+        }
+
+        btnNegativo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 
     private fun cerrarSesion() {
