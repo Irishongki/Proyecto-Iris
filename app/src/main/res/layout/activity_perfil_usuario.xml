@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_perfil"
+    android:background="@drawable/banner2"
     tools:context=".Perfil_Usuario">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview_perfil"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:backgroundTint="#7544d7"
+        android:backgroundTint="@color/fondo_detalle_marcador"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:contentPadding="2dp"
@@ -19,43 +19,63 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/iv_perfil"
-            android:layout_width="169dp"
-            android:layout_height="162dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewFotoPerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/usuario" />
+            app:cardBackgroundColor="@color/fondo_detalle_marcador"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="2dp">
+
+            <ImageView
+                android:id="@+id/iv_perfil"
+                android:layout_width="169dp"
+                android:layout_height="162dp"
+                android:layout_gravity="center"
+                android:pointerIcon="none"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/usuario" />
+        </androidx.cardview.widget.CardView>
+
     </androidx.cardview.widget.CardView>
 
     <EditText
         android:id="@+id/edt_email_perfil"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="255dp"
+        android:layout_height="40dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/fondo_datos_perfil"
         android:inputType="textEmailAddress"
+        android:paddingStart="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardview_perfil" />
 
     <EditText
         android:id="@+id/edt_NombreUsuario_perfil"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
+        android:layout_width="255dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/fondo_datos_perfil"
         android:hint="Tu nombre de Usuario..."
         android:inputType="text"
+        android:paddingLeft="15dp"
+        android:textColorHint="#7E7979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_email_perfil" />
 
     <EditText
         android:id="@+id/edt_password"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_width="255dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/fondo_datos_perfil"
         android:hint="Tu contraseña.."
         android:inputType="textPassword"
+        android:paddingStart="15dp"
+        android:textColorHint="#7E7979"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_NombreUsuario_perfil" />
@@ -69,6 +89,7 @@
         android:backgroundTint="@color/boton"
         android:text="GUARDAR"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_baja"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_password" />
@@ -81,6 +102,7 @@
         android:backgroundTint="@color/boton"
         android:text="Darse de Baja"
         android:textColor="@color/white"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="@+id/btn_guardar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_guardar"

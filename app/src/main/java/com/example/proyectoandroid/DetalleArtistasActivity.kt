@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.style.UnderlineSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.Window
@@ -36,6 +38,12 @@ class DetalleArtistasActivity : AppCompatActivity() {
         binding.tvTitulo.text= artista.nombre
         binding.ivArtistaDetalle.setImageResource(artista.imagen)
         binding.tvInformacion.text = artista.descripcion
+
+        //Subrayar un texto con la clase SpannableString
+        var infoTitulo = binding.tituloInformacion
+        var spannableString = SpannableString(infoTitulo.text);
+        spannableString.setSpan( UnderlineSpan(), 0, spannableString.length, 0);
+        infoTitulo.setText(spannableString);
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

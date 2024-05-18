@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo_principal"
+    android:elevation="5dp"
     tools:context=".Principal">
 
     <LinearLayout
@@ -21,15 +22,24 @@
             android:layout_height="280dp"
             android:background="@drawable/top_fondo">
 
-            <ImageView
-                android:id="@+id/iv_usuario"
-                android:layout_width="128dp"
-                android:layout_height="128dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                app:cardBackgroundColor="@color/fondo"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/usuario" />
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_usuario"
+                    android:layout_width="128dp"
+                    android:layout_height="128dp"
+                    app:srcCompat="@drawable/usuario" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/tv_usuario"
@@ -39,9 +49,9 @@
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/iv_usuario"
-                app:layout_constraintStart_toStartOf="@+id/iv_usuario"
-                app:layout_constraintTop_toBottomOf="@+id/iv_usuario" />
+                app:layout_constraintEnd_toEndOf="@+id/cardViewFoto"
+                app:layout_constraintStart_toStartOf="@+id/cardViewFoto"
+                app:layout_constraintTop_toBottomOf="@+id/cardViewFoto" />
 
             <TextView
                 android:id="@+id/tv_email"
@@ -53,23 +63,23 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_usuario"
                 app:layout_constraintStart_toStartOf="@+id/tv_usuario"
                 app:layout_constraintTop_toBottomOf="@+id/tv_usuario" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewBuscador"
-        android:layout_width="126dp"
+        android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/boton"
         app:cardCornerRadius="5dp"
         app:cardElevation="12dp"
         app:contentPadding="5dp"
         app:layout_constraintEnd_toStartOf="@+id/cardViewArtistas"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        android:clickable="true"
-       >
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -90,9 +100,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingTop="5dp"
                 android:text="@string/buscador"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -100,8 +111,9 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewArtistas"
-        android:layout_width="126dp"
+        android:layout_width="140dp"
         android:layout_height="110dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/boton"
         app:cardCornerRadius="5dp"
         app:cardElevation="12dp"
@@ -109,9 +121,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/cardViewBuscador"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/cardViewBuscador"
-        app:layout_constraintTop_toTopOf="@+id/cardViewBuscador"
-        android:clickable="true"
-       >
+        app:layout_constraintTop_toTopOf="@+id/cardViewBuscador">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -131,9 +141,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingTop="5dp"
                 android:text="@string/artistas"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -141,18 +152,17 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewConciertos"
-        android:layout_width="126dp"
+        android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginTop="20dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/boton"
         app:cardCornerRadius="5dp"
         app:cardElevation="12dp"
         app:contentPadding="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardViewRecordatorios"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewBuscador"
-        android:clickable="true"
-        >
+        app:layout_constraintBottom_toBottomOf="@+id/cardViewRecordatorios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardViewRecordatorios"
+        app:layout_constraintTop_toTopOf="@+id/cardViewRecordatorios">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -172,9 +182,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingTop="5dp"
                 android:text="@string/mapas"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -183,18 +194,18 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewRecordatorios"
-        android:layout_width="126dp"
+        android:layout_width="140dp"
         android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/boton"
         app:cardCornerRadius="5dp"
         app:cardElevation="12dp"
         app:contentPadding="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardViewConciertos"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cardViewConciertos"
-        app:layout_constraintTop_toTopOf="@+id/cardViewConciertos"
-        android:clickable="true"
-        >
+        app:layout_constraintEnd_toStartOf="@+id/cardViewConciertos"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewBuscador">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -214,9 +225,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingTop="5dp"
                 android:text="@string/Recordatorios_entradas"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -225,18 +237,17 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewCerrarSesion"
-        android:layout_width="126dp"
+        android:layout_width="140dp"
         android:layout_height="110dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
         app:cardBackgroundColor="@color/boton"
         app:cardCornerRadius="5dp"
         app:cardElevation="12dp"
         app:contentPadding="5dp"
-        app:layout_constraintEnd_toStartOf="@+id/cardViewRecordatorios"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewConciertos"
-        android:clickable="true"
-        >
+        app:layout_constraintEnd_toEndOf="@+id/cardViewRecordatorios"
+        app:layout_constraintStart_toStartOf="@+id/cardViewRecordatorios"
+        app:layout_constraintTop_toBottomOf="@+id/cardViewRecordatorios">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -256,9 +267,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:paddingTop="5dp"
                 android:text="@string/cerrarSesion"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

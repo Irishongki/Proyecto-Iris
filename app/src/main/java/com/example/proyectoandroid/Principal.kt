@@ -224,6 +224,6 @@ class Principal : AppCompatActivity() {
         cargarImagen()
 
     }
-
+    
 
 }

@@ -14,18 +14,20 @@
         android:layout_marginTop="32dp"
         android:text="TextView"
         android:textColor="#040303"
-        android:textSize="20sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_artista_detalle"
         android:layout_width="239dp"
         android:layout_height="248dp"
         android:layout_marginTop="32dp"
         android:scaleType="centerCrop"
+        app:strokeColor="@color/white"
+        app:strokeWidth="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
@@ -38,17 +40,22 @@
         android:layout_marginTop="40dp"
         android:text="Información"
         android:textColor="#0B0A0A"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
+        android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_artista_detalle" />
 
     <TextView
         android:id="@+id/tv_informacion"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="191dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_informacion" />
