@@ -99,12 +99,9 @@ class Perfil_Usuario : AppCompatActivity() {
                 if (!errorEnCogerDatos()) {
                     guardarPerfil()
                     actualizarDatosUsuario()
-                    finish()
-
                 }
             }else{
                 guardarPerfil()
-                finish()
 
             }
         }
