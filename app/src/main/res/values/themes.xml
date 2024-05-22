@@ -12,6 +12,8 @@
     <style name="ActionBarTitleTextStyle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/white</item>
     </style>
-
+    <style name="circle">
+        <item name="cornerSize">10%</item>
+    </style>
     <style name="Theme.ProyectoAndroid" parent="AppTheme" />
 </resources>
