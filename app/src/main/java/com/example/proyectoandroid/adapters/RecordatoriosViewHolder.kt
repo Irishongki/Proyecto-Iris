@@ -26,4 +26,6 @@ class RecordatoriosViewHolder (v: View) : RecyclerView.ViewHolder(v){
         }
 
     }
+
+
 }

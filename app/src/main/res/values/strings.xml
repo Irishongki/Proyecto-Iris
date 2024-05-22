@@ -31,4 +31,6 @@
     <string name="afirmativo">Si</string>
     <string name="negativo">No</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="salirDeLaAplicacion">¿Estás seguro de que quieres salir?</string>
+    <string name="eliminarRecordatorio">¿Estás seguro de que quieres eliminar este recordatorio?</string>
 </resources>

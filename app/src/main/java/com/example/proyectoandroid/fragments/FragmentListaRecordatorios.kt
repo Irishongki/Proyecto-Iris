@@ -1,12 +1,17 @@
 package com.example.proyectoandroid.fragments
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.EditarRecordatorios
@@ -37,7 +42,7 @@ class FragmentListaRecordatorios : Fragment() {
 
             recyclerView = view.findViewById(R.id.recycler_conciertos)
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recordatoriosAdapter = RecordatoriosAdapter(lista, ::eliminarConcierto, ::editarConcierto)
+            recordatoriosAdapter = RecordatoriosAdapter(lista, ::mostrarMensajeEliminarRecordatorio, ::editarConcierto)
             recyclerView.adapter = recordatoriosAdapter
 
             obtenerDatosRecordatorios()
@@ -84,7 +89,26 @@ class FragmentListaRecordatorios : Fragment() {
             })
         }
 
+    private fun mostrarMensajeEliminarRecordatorio(concierto: String?) {
+        val dialog = Dialog(requireContext())
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialogo_borrar_recordatorio)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
+        val btnAfirmativo : Button = dialog.findViewById(R.id.btn_afirmativo)
+        val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
+
+        btnAfirmativo.setOnClickListener {
+            eliminarConcierto(concierto)
+            dialog.dismiss()
+        }
+
+        btnNegativo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

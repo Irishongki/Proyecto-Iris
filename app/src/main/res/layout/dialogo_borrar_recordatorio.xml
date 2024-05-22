@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dialogo_darseDeBaja"
     android:layout_width="300dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_darseDeBaja"
+        android:id="@+id/layout_borrarRecordatorio"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@color/fondo_principal"
@@ -21,11 +19,11 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:paddingTop="28dp"
-            android:text="@string/darseDeBaja_Confirmacion"
+            android:text="@string/eliminarRecordatorio"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="@id/layout_darseDeBaja" />
+            app:layout_constraintTop_toTopOf="@id/layout_borrarRecordatorio" />
 
         <Button
             android:id="@+id/btn_afirmativo"
@@ -61,11 +59,10 @@
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        app:layout_constraintBottom_toTopOf="@id/layout_darseDeBaja"
+        app:layout_constraintBottom_toTopOf="@id/layout_borrarRecordatorio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/layout_darseDeBaja"
-        app:srcCompat="@drawable/baja" />
-
+        app:layout_constraintTop_toTopOf="@id/layout_borrarRecordatorio"
+        app:srcCompat="@drawable/borrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

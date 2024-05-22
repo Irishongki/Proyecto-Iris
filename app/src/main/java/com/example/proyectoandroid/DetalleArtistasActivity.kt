@@ -60,7 +60,7 @@ class DetalleArtistasActivity : AppCompatActivity() {
                 irActivityPerfil()
             }
             R.id.item_salir ->{
-                finishAffinity()
+                mostrarMensajeSalir()
             }
         }
         return super.onOptionsItemSelected(item)
@@ -78,6 +78,26 @@ class DetalleArtistasActivity : AppCompatActivity() {
 
         btnAfirmativo.setOnClickListener {
             cerrarSesion()
+        }
+
+        btnNegativo.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
+    }
+
+    private fun mostrarMensajeSalir() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(false)
+        dialog.setContentView(R.layout.dialogo_salir)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        val btnAfirmativo : Button = dialog.findViewById(R.id.btn_afirmativo)
+        val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
+
+        btnAfirmativo.setOnClickListener {
+            finishAffinity()
         }
 
         btnNegativo.setOnClickListener {

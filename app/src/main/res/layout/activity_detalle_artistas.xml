@@ -11,7 +11,7 @@
         android:id="@+id/tv_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
         android:textColor="#040303"
         android:textSize="40sp"
@@ -24,20 +24,20 @@
         android:id="@+id/iv_artista_detalle"
         android:layout_width="239dp"
         android:layout_height="248dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
-        app:strokeColor="@color/white"
-        app:strokeWidth="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
-        app:srcCompat="@drawable/artista1" />
+        app:srcCompat="@drawable/artista1"
+        app:strokeColor="@color/white"
+        app:strokeWidth="20dp" />
 
     <TextView
         android:id="@+id/titulo_informacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:text="Información"
         android:textColor="#0B0A0A"
         android:textSize="25sp"
@@ -49,13 +49,13 @@
 
     <TextView
         android:id="@+id/tv_informacion"
-        android:layout_width="match_parent"
-        android:layout_height="191dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="314dp"
+        android:layout_height="140dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titulo_informacion" />
