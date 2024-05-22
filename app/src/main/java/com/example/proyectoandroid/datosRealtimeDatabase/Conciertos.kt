@@ -9,5 +9,6 @@ data class Conciertos(
     val direccion : String? = null,
     val ciudad: String? = null,
     val artista: String? = null ,
-    val precio : String? = null
+    val precio : String? = null,
+    val userId: String? = null
 )

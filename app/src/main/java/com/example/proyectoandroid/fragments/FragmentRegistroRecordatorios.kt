@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.EditText
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
@@ -82,7 +83,10 @@ class FragmentRegistroRecordatorios : Fragment() {
             // Generamos un ID único para el concierto
             val conciertoId = miDB_Reference.push().key
 
-            val concierto = Conciertos(conciertoId, nombre, fechaHora, direccion, ciudad, artista, precio)
+            // Obtener UID del usuario actual
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
+
+            val concierto = Conciertos(conciertoId, nombre, fechaHora, direccion, ciudad, artista, precio, userId)
 
             // Guardamos el concierto en la base de datos
             conciertoId?.let {

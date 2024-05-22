@@ -18,6 +18,7 @@ import com.example.proyectoandroid.EditarRecordatorios
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.adapters.RecordatoriosAdapter
 import com.example.proyectoandroid.datosRealtimeDatabase.Conciertos
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -71,8 +72,11 @@ class FragmentListaRecordatorios : Fragment() {
     }
 
     private fun obtenerDatosRecordatorios() {
+            val userId = FirebaseAuth.getInstance().currentUser?.uid
             val databaseReference = FirebaseDatabase.getInstance().getReference("conciertos")
-            databaseReference.addValueEventListener(object : ValueEventListener {
+            val query = databaseReference.orderByChild("userId").equalTo(userId)
+
+            query.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val conciertosList = mutableListOf<Conciertos>()
                     for (dataSnapshot in snapshot.children) {
