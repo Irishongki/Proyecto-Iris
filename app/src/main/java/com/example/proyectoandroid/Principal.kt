@@ -165,7 +165,7 @@ class Principal : AppCompatActivity() {
                             val correoUsuarioActual: String? = googleUser?.email
 
                             if (!correoUsuarioActual.isNullOrEmpty()) {
-                                binding.tvUsuario.text = "Hola Usuario!"
+                                binding.tvUsuario.text = "Hola "+ correoUsuarioActual.substringBefore("@")+ "!"
                                 binding.tvEmail.text = correoUsuarioActual
                             }
                         }
