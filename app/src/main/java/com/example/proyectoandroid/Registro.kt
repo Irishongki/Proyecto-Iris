@@ -108,4 +108,9 @@ class Registro : AppCompatActivity() {
     private fun irActivityLogin() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }

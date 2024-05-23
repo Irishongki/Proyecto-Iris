@@ -140,4 +140,9 @@ class Recordatorios : AppCompatActivity() , OnFragmentActionListener{
     private fun irActivityPerfil() {
         startActivity(Intent(this,Perfil_Usuario::class.java))
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this,Principal::class.java))
+    }
 }

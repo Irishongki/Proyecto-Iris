@@ -318,4 +318,9 @@ class Perfil_Usuario : AppCompatActivity() {
         startActivity(Intent(this, LoginActivity::class.java))
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this,Principal::class.java))
+    }
+
 }

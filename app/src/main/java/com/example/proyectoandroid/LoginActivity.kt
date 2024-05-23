@@ -138,4 +138,9 @@ class LoginActivity : AppCompatActivity() {
         //Lanzamos un intent
         responseLauncher.launch(googleClient.signInIntent)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
+    }
 }

@@ -96,6 +96,7 @@
             android:background="@drawable/color_fondo_texto_recordatorios"
             android:gravity="start|center_vertical"
             android:hint="Introduce el precio.."
+            android:inputType="number"
             android:padding="15dp"
             android:textColor="@color/black" />
 

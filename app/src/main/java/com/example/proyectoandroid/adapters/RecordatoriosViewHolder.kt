@@ -17,7 +17,7 @@ class RecordatoriosViewHolder (v: View) : RecyclerView.ViewHolder(v){
         binding.tvDireccionConcierto.text= concierto.direccion
         binding.tvCiudadConcierto.text = concierto.ciudad
         binding.tvArtista.text = concierto.artista
-        binding.tvPrecioConcierto.text = concierto.precio
+        binding.tvPrecioConcierto.text = concierto.precio+"€"
         binding.ivBorrarRecordatorio.setOnClickListener {
             eliminarConcierto(concierto.id)
         }
