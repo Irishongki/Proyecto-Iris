@@ -121,6 +121,7 @@ class Perfil_Usuario : AppCompatActivity() {
         val btnNegativo : Button = dialog.findViewById(R.id.btn_negativo)
 
         btnAfirmativo.setOnClickListener {
+           auth.signOut()
             borrarPerfil()
         }
 
