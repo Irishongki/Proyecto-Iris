@@ -4,7 +4,9 @@
     <string name="hint_email">Email...</string>
     <string name="hint_password">Password...</string>
     <string name="registro">Eres nuevo? Registrate</string>
+    <string name="olvidar_contraseña">Olvidaste tu contraseña?</string>
     <string name="btn_login">LOGIN</string>
+    <string name="btn_recuperar">RECUPERAR</string>
     <string name="btn_registro">REGISTRO</string>
     <string name="item_cerrar_sesion">CERRAR SESION</string>
     <string name="item_salir">SALIR</string>

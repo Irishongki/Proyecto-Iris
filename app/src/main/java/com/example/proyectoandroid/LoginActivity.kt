@@ -14,6 +14,11 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -51,6 +56,7 @@ class LoginActivity : AppCompatActivity() {
     private var email= ""
     private var pass = ""
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         auth = Firebase.auth
+        database = FirebaseDatabase.getInstance().reference
         setListeners()
     }
 
@@ -76,6 +83,9 @@ class LoginActivity : AppCompatActivity() {
                 loginBasico()
             }
         }
+        binding.tvOlvidarContraseA.setOnClickListener {
+            irActivityRecuperarPassword()
+        }
         binding.tvRegistro.setOnClickListener {
             irActivityRegistro()
         }
@@ -84,6 +94,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
 
     //Metodo que comprueba que los campos introducidos esten correctos
     private fun comprobarCampos(): Boolean {
@@ -107,11 +118,59 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener {
                 if (it.isSuccessful){
                     irActivityPrincipal()
+                    /* Actualizar la nueva password en la base de datos
+                    por si hemos utilizado lo de restablecer contraseña*/
+                    actualizarPasswordEnDB(pass)
                     Toast.makeText(this,"Bienvenido/a a IRIS", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this,"El correo o la contraseña no es correcta", Toast.LENGTH_SHORT).show()
                 }
             }
+    }
+
+    /*Metodo para que solo actualizemos la contraseña de la base de datos
+    una vez que nos logueamos en nuestra app
+    */
+    private fun actualizarPasswordEnDB(newPassword: String) {
+        val usuarioActual = FirebaseAuth.getInstance().currentUser
+        val userEmail = usuarioActual?.email
+
+        if (userEmail != null) {
+            val usuariosRef = FirebaseDatabase.getInstance().getReference("usuarios")
+            val query = usuariosRef.orderByChild("email").equalTo(userEmail)
+
+            query.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        for (usuarioSnapshot in dataSnapshot.children) {
+                            usuarioSnapshot.ref.child("password").setValue(newPassword)
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful) {
+
+                                    } else {
+
+                                    }
+                                }
+                        }
+                    } else {
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "No se encontró ningún usuario con este correo electrónico",
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+                override fun onCancelled(databaseError: DatabaseError) {
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "Error al buscar usuarios en la base de datos",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            })
+        } else {
+            Toast.makeText(this, "Usuario no autenticado", Toast.LENGTH_LONG).show()
+        }
     }
 
     //Lanza el Activity Principal
@@ -123,6 +182,11 @@ class LoginActivity : AppCompatActivity() {
     //Lanza el Activity Registro
     private fun irActivityRegistro () {
         startActivity(Intent(this, Registro::class.java))
+    }
+
+    //Lanza el Activity de Recuperación de password
+    private fun irActivityRecuperarPassword() {
+        startActivity(Intent(this, OlvidarPassword::class.java))
     }
 
     //Metodo para loguearnos con google
