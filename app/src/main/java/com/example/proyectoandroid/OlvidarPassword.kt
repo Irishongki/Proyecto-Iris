@@ -43,6 +43,9 @@ class OlvidarPassword : AppCompatActivity() {
                     }
                 }
             }
+            binding.tvVolverInicio.setOnClickListener {
+                startActivity(Intent(this, LoginActivity::class.java))
+            }
         }
 
         private fun validar(): Boolean {
