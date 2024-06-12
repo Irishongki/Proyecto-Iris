@@ -9,5 +9,4 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white">
 <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
- <img src="https://img.shields.io/npm/v/ra-data-firebase.svg?style=flat-square)](https://npmjs.org/package/ra-data-firebase">
 </p>
