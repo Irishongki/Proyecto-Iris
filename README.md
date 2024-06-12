@@ -13,7 +13,7 @@
 </p>
 
 ## Descripción❔
-> [!IMPORTANTE]
+> [!IMPORTANT]
 > Este es el repositorio de mi proyecto de fin de ciclo superior de DAM, donde he desarrollado una aplicación de conciertos.
 > Se trata de una aplicación diseñada para los apasionados de la música, ofreciendo una experiencia educativa única en dispositivos móviles.
 > Iris proporciona un enfoque interactivo y personalizado para explorar el mundo de la música, centrándose en la diversidad de conciertos y artistas disponibles.
