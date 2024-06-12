@@ -9,4 +9,6 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white">
 <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white">
+  <img src="https://img.shields.io/badge/Firebase?style=for-the-badge&logo=%23DD2C00&logoColor=white&labelColor=white&color=orange">
+
 </p>
