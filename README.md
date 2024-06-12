@@ -27,6 +27,10 @@
 -  En la mayoría de casos estará desactivada la opción de instalación de aplicaciones de orígenes desconocidos,
   es decir que no se hayan descargado de Google Play Store. Entonces tenemos que activar esta opción.<br/>
   <img width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/bb655cba-d540-4ce2-90cb-45c254e2df18">
-  <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/366e4be5-a989-4692-93d0-ed5dbe63673f">
+  <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/366e4be5-a989-4692-93d0-ed5dbe63673f"><br/>
+
+  - Nos vamos al siguiente enlace de drive donde tendremos la apk para poder instalar nuestra aplicación de Iris en el dispositivo
+  >https://drive.google.com/drive/folders/1g153h1MAyf99hXVMbNvmZ-ikC-lVIpcR
+
 
 
