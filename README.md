@@ -20,6 +20,6 @@
 >Mi propuesta trata de atraer la atención sobre la riqueza y variedad de los conciertos, brindando una plataforma donde los usuarios pueden no solo descubrir sobre los eventos en vivo, sino tambien aprender sobre >los artistas y su música.
 
 ## Pasos para poder utilizar la aplicación🗒️
-****1º Activar en el Dispositivo Móvil que se puedan instalar apps de origen desconocido****
- -Nos vamos a Ajustes del dispositivo móvil<br/>
+****1º Activar en el Dispositivo Móvil que se puedan instalar apps de origen desconocido****<br/>
+ - Nos vamos a Ajustes del dispositivo móvil<br/>
  - Buscamos la opción de Seguridad (puede llamarse diferente en cada dispositivo)
