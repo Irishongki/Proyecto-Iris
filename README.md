@@ -18,3 +18,5 @@
 > Se trata de una aplicación diseñada para los apasionados de la música, ofreciendo una experiencia educativa única en dispositivos móviles.<br/>
 > Iris proporciona un enfoque interactivo y personalizado para explorar el mundo de la música, centrándose en la diversidad de conciertos y artistas disponibles.
 >Mi propuesta trata de atraer la atención sobre la riqueza y variedad de los conciertos, brindando una plataforma donde los usuarios pueden no solo descubrir sobre los eventos en vivo, sino tambien aprender sobre >los artistas y su música.
+
+## Pasos para poder utilizar la aplicación🗒️
