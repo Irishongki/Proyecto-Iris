@@ -4,5 +4,6 @@
 <p align="center">
 <img src="https://img.shields.io/badge/STATUS-COMPLETADO-green">
   <img src="https://img.shields.io/badge/LENGUAJE-KOTLIN-orange">
+  <img src="https://img.shields.io/badge/Ultima actualización-junio del 2024-blue">
 </p>
 <img src="https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white">
