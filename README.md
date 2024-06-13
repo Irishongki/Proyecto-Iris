@@ -23,7 +23,7 @@
 ****1º Activar en el Dispositivo Móvil que se puedan instalar apps de origen desconocido****<br/>
  - Nos vamos a Ajustes del dispositivo móvil<br/>
  - Buscamos la opción de Seguridad (puede llamarse diferente en cada dispositivo)<br/>
-<img width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/9584f7e3-64b6-484c-8f93-0401fa0a30ba"><br/>
+ <p align="center"><img width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/9584f7e3-64b6-484c-8f93-0401fa0a30ba"></p><br/>
 -  En la mayoría de casos estará desactivada la opción de instalación de aplicaciones de orígenes desconocidos,
   es decir que no se hayan descargado de Google Play Store. Entonces tenemos que activar esta opción.<br/>
   <img width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/bb655cba-d540-4ce2-90cb-45c254e2df18">
