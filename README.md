@@ -27,7 +27,7 @@
  <ul>
  <li>En la mayoría de casos estará desactivada la opción de instalación de aplicaciones de orígenes desconocidos,
   es decir que no se hayan descargado de Google Play Store. Entonces tenemos que activar esta opción.</li> 
- </ul><br/><br/>
+ </ul><br/>
   <p align="center">
   <img width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/bb655cba-d540-4ce2-90cb-45c254e2df18">
   <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/366e4be5-a989-4692-93d0-ed5dbe63673f"><br/>
