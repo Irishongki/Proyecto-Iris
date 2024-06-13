@@ -38,7 +38,7 @@
   </ul>
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/5f0fb4ed-b917-4c31-8668-a1cbac44b371">
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/f102e419-a957-412f-85d2-db15ee92da2d">
-<img  width="340" height="300" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/9dfa7cb1-b0b2-41ff-8fd9-878333438a5b">
+<img  width="360" height="250" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/9dfa7cb1-b0b2-41ff-8fd9-878333438a5b">
 
 
 
