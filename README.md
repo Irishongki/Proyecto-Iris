@@ -39,6 +39,16 @@
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/5f0fb4ed-b917-4c31-8668-a1cbac44b371">
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/f102e419-a957-412f-85d2-db15ee92da2d">
 <img  width="360" height="250" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/9dfa7cb1-b0b2-41ff-8fd9-878333438a5b">
+<ul> 
+    <li>Una vez que le hemos dado a descargar de todos modos, abriremos el apk una vez que se ha descargado para instalarlo y una vez instalado abriremos la app</li>
+</ul>
+<img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/d4c0bfdd-8fea-4cab-a8f9-7a9f8a86246b">
+<img  width="360" height="250" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/33beb136-9d6e-4076-b7dd-7d2dd4e9c331">
+<img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/1f5c89d3-c001-4a47-bd4b-07219821813b">
+<img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/5facaccd-9bd1-4025-a3b7-a7fed837c251">
+<img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/975b6e71-4f9e-4a15-9782-952c5f3cb42a">
+
+
 
 
 
