@@ -45,7 +45,7 @@
 <img  width="220" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/d4c0bfdd-8fea-4cab-a8f9-7a9f8a86246b">
 <img  width="360" height="250" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/33beb136-9d6e-4076-b7dd-7d2dd4e9c331">
 <img  width="220" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/1f5c89d3-c001-4a47-bd4b-07219821813b">
-<img  width="220" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/5facaccd-9bd1-4025-a3b7-a7fed837c251"><br/>
+<img  width="220" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/5facaccd-9bd1-4025-a3b7-a7fed837c251">
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/975b6e71-4f9e-4a15-9782-952c5f3cb42a">
 
 
