@@ -30,7 +30,9 @@
   <img width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/bb655cba-d540-4ce2-90cb-45c254e2df18">
   <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/366e4be5-a989-4692-93d0-ed5dbe63673f"><br/>
   </p>
-  - Nos vamos al siguiente enlace de drive donde tendremos la apk para poder instalar nuestra aplicación de Iris en el dispositivo
+   <ul> 
+  <li>Nos vamos al siguiente enlace de drive donde tendremos la apk para poder instalar nuestra aplicación de Iris en el dispositivo</li> 
+   </ul>
 <p align="center">
 -> https://drive.google.com/drive/folders/1g153h1MAyf99hXVMbNvmZ-ikC-lVIpcR
 </p>
