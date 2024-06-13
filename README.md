@@ -33,9 +33,9 @@
 <p align="center">
 -> https://drive.google.com/drive/folders/1g153h1MAyf99hXVMbNvmZ-ikC-lVIpcR
 </p>
-  <ol type="A"> 
+  <ul> 
     <li>Pinchamos en la apk de Iris y le damos a descargar, dandole a descargar de todos modos</li>
-  </ol><br/>
+  </ul><br/>
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/5f0fb4ed-b917-4c31-8668-a1cbac44b371">
 <img  width="240" height="400" src="https://github.com/Irishongki/Proyecto-Iris/assets/48756218/f102e419-a957-412f-85d2-db15ee92da2d">
 
